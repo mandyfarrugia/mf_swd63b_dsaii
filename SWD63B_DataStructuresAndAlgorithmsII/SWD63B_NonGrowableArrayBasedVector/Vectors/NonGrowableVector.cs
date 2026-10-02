@@ -1,4 +1,4 @@
-﻿namespace SWD63B_NonGrowableArrayBasedVector
+﻿namespace SWD63B_NonGrowableArrayBasedVector.Vectors
 {
     /// <summary>
     /// A data structure representing a non-growable array based vector with a fixed size.
