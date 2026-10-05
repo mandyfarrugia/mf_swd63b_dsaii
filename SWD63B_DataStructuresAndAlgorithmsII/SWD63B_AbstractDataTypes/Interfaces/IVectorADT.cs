@@ -1,4 +1,4 @@
-﻿    namespace SWD63B_NonGrowableArrayBasedVector.Interfaces
+﻿    namespace SWD63B_AbstractDataTypes.Interfaces
 {
     /// <summary>
     /// This is an Abstract Data Type (ADT) defining the behaviours of a Vector Data Structure.

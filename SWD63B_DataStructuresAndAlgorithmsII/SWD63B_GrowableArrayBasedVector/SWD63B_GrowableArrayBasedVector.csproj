@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SWD63B_AbstractDataTypes\SWD63B_AbstractDataTypes.csproj" />
-  </ItemGroup>
-
 </Project>

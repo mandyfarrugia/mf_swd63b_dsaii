@@ -1,4 +1,4 @@
-﻿using SWD63B_NonGrowableArrayBasedVector.Interfaces;
+﻿using SWD63B_AbstractDataTypes.Interfaces;
 
 namespace SWD63B_NonGrowableArrayBasedVector.Vectors
 {

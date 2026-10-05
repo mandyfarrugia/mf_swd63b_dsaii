@@ -13,6 +13,8 @@ namespace SWD63B_NonGrowableArrayBasedVector
 
             vector_int.ReplaceElementAtRank(0, 6);
 
+            vector_int.RemoveElementAtRank(1);
+
             Console.ReadKey();
         }
     }
