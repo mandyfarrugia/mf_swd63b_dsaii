@@ -33,14 +33,14 @@ namespace SWD63B_NonGrowableArrayBasedVector.Vectors
                 throw new IndexOutOfRangeException("Invalid rank!");
             }
 
-            if (this._countOfElements == this._vectorElements.Length)
+            if (this.Size() == this._vectorElements.Length)
             {
                 T[] newVectorElements = new T[this._vectorElements.Length * 2];
                 this._vectorElements.CopyTo(newVectorElements, 0); //Copy all elements of source array to destination array, starting from index zero.
                 this._vectorElements = newVectorElements;
             }
 
-            for (int location = this._countOfElements - 1; location >= index; location--)
+            for (int location = this.Size() - 1; location >= index; location--)
             {
                 this._vectorElements[location + 1] = this._vectorElements[location];
             }
@@ -63,12 +63,12 @@ namespace SWD63B_NonGrowableArrayBasedVector.Vectors
 
             T oldElement = this._vectorElements[index];
 
-            for (int location = index; location < this._countOfElements - 1; location++)
+            for (int location = index; location < this.Size() - 1; location++)
             {
                 this._vectorElements[location] = this._vectorElements[location + 1];
             }
 
-            this._vectorElements[this._countOfElements - 1] = default!;
+            this._vectorElements[this.Size() - 1] = default!;
             this._countOfElements--;
             return oldElement;
         }
