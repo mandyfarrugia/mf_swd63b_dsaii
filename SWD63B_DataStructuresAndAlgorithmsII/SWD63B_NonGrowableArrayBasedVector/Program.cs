@@ -6,8 +6,13 @@ namespace SWD63B_NonGrowableArrayBasedVector
     {
         public static void Main(string[] args)
         {
-            NonGrowableVector<int> vector_int = new NonGrowableVector<int>(25);
-            NonGrowableVector<string> vector_string = new NonGrowableVector<string>(2);
+            NonGrowableArrayBasedVector<int> vector_int = new NonGrowableArrayBasedVector<int>(25);
+            vector_int.InsertAtRank(0, 3);
+            vector_int.InsertAtRank(1, 4);
+            vector_int.InsertAtRank(2, 5);
+
+            vector_int.ReplaceElementAtRank(0, 6);
+
             Console.ReadKey();
         }
     }
