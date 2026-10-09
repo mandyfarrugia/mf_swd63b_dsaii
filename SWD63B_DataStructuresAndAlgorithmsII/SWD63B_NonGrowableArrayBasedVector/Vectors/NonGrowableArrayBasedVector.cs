@@ -28,24 +28,40 @@ namespace SWD63B_NonGrowableArrayBasedVector.Vectors
 
         public void InsertAtRank(int index, T newElement)
         {
+            //Check if the vector is full before attempting to insert elements.
+            //if (this.Size() == this._vectorElements.Length)
+            //{
+            //    T[] newVectorElements = new T[this._vectorElements.Length * 2];
+            //    this._vectorElements.CopyTo(newVectorElements, 0); //Copy all elements of source array to destination array, starting from index zero.
+            //    this._vectorElements = newVectorElements;
+
+
+            if (this.Size() == this._vectorElements.Length)
+            {
+                throw new InvalidOperationException("Cannot insert element in a full vector!");
+            }
+
+
             if (index < 0 || index > this.Size())
             {
                 throw new IndexOutOfRangeException("Invalid rank!");
             }
 
-            if (this.Size() == this._vectorElements.Length)
+            //Check if insertion is at the next free location.
+            if (index == this.Size())
             {
-                T[] newVectorElements = new T[this._vectorElements.Length * 2];
-                this._vectorElements.CopyTo(newVectorElements, 0); //Copy all elements of source array to destination array, starting from index zero.
-                this._vectorElements = newVectorElements;
+                this._vectorElements[index] = newElement;
+            }
+            else
+            {
+                for (int location = this.Size() - 1; location >= index; location--)
+                {
+                    this._vectorElements[location + 1] = this._vectorElements[location];
+                }
+
+                this._vectorElements[index] = newElement;
             }
 
-            for (int location = this.Size() - 1; location >= index; location--)
-            {
-                this._vectorElements[location + 1] = this._vectorElements[location];
-            }
-
-            this._vectorElements[index] = newElement;
             this._countOfElements++;
         }
 
