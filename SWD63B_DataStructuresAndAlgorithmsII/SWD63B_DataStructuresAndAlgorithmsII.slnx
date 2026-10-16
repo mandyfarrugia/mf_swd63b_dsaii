@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="SWD63B_AbstractDataTypes/SWD63B_AbstractDataTypes.csproj" Id="aeb6fee9-743d-4391-bc41-543a51a449de" />
   <Project Path="SWD63B_GrowableArrayBasedVector/SWD63B_GrowableArrayBasedVector.csproj" Id="5e41d46d-7ae6-449d-81c0-7ed79cd8ba23" />
+  <Project Path="SWD63B_HashTables/SWD63B_HashTables.csproj" Id="62c68173-5ad6-4f20-bf6d-baf561b774c6" />
   <Project Path="SWD63B_NonGrowableArrayBasedVector/SWD63B_NonGrowableArrayBasedVector.csproj" />
 </Solution>
