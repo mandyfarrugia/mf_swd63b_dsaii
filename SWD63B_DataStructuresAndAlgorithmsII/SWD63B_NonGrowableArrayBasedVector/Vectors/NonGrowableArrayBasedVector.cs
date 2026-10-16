@@ -7,8 +7,8 @@ namespace SWD63B_NonGrowableArrayBasedVector.Vectors
     /// </summary>
     public class NonGrowableArrayBasedVector<T> : IVectorADT<T>
     {
-        private T[] _vectorElements;
-        private int _countOfElements = 0;
+        protected T[] _vectorElements;
+        protected int _countOfElements = 0;
 
         public NonGrowableArrayBasedVector(int maximumCapacity)
         {
@@ -26,18 +26,16 @@ namespace SWD63B_NonGrowableArrayBasedVector.Vectors
             throw new IndexOutOfRangeException("Invalid rank!");
         }
 
-        public void InsertAtRank(int index, T newElement)
+        public virtual void InsertAtRank(int index, T newElement)
         {
+            if (this.Size() == this._vectorElements.Length)
+            {
+                throw new InvalidOperationException("Cannot insert element into vector as it is full!");
+            }
+
             if (index < 0 || index > this.Size())
             {
                 throw new IndexOutOfRangeException("Invalid rank!");
-            }
-
-            if (this.Size() == this._vectorElements.Length)
-            {
-                T[] newVectorElements = new T[this._vectorElements.Length * 2];
-                this._vectorElements.CopyTo(newVectorElements, 0); //Copy all elements of source array to destination array, starting from index zero.
-                this._vectorElements = newVectorElements;
             }
 
             for (int location = this.Size() - 1; location >= index; location--)
@@ -54,7 +52,7 @@ namespace SWD63B_NonGrowableArrayBasedVector.Vectors
             return this._countOfElements == 0;
         }
 
-        public T RemoveElementAtRank(int index)
+        public virtual T RemoveElementAtRank(int index)
         {
             if (index < 0 || index > this.Size())
             {
